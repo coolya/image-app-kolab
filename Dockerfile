@@ -19,18 +19,10 @@ RUN echo "Package: *" > /etc/apt/preferences.d/kolab \
 
 # Install packages
 RUN apt-get -q update                   \
- && apt-get --force-yes -y -qq upgrade  \
- && apt-get --force-yes install -y -q   \
+ && apt-get --force-yes -y -qq upgrade
+RUN  apt-get --force-yes install -y -q   \
  	apt-utils \
-    kolab \
-    kolab-cli \
-    kolab-conf \
-    kolab-imap \
-    kolab-mta \
-    kolab-saslauthd \
-    kolab-server \
-    kolab-webclient \
-    kolab-webadmin
+    kolab
 
 
 
