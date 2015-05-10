@@ -21,7 +21,17 @@ RUN echo "Package: *" > /etc/apt/preferences.d/kolab \
 RUN apt-get -q update                   \
  && apt-get --force-yes -y -qq upgrade  \
  && apt-get --force-yes install -y -q   \
-    kolab     
+ 	apt-utils \
+    kolab \
+    kolab-cli \
+    kolab-conf \
+    kolab-imap \
+    kolab-mta \
+    kolab-saslauthd \
+    kolab-server \
+    kolab-webclient \
+    kolab-webadmin
+
 
 
 # Clean rootfs from image-builder
