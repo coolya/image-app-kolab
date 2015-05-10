@@ -20,9 +20,9 @@ RUN echo "Package: *" > /etc/apt/preferences.d/kolab \
 # Install packages
 RUN apt-get -q update                   \
  && apt-get --force-yes -y -qq upgrade
-RUN  apt-get --force-yes install -y -q   \
- 	apt-utils \
-    kolab
+# RUN  apt-get --force-yes install -y -q   \
+# 	apt-utils \
+#    kolab
 
 
 
