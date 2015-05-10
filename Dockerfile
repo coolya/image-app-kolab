@@ -8,7 +8,9 @@ RUN /usr/local/sbin/builder-enter
 RUN echo "deb http://obs.kolabsys.com/repositories/Kolab:/3.4/Debian_7.0/ ./" > /etc/apt/sources.list.d/kolab.list
 RUN echo "deb http://obs.kolabsys.com/repositories/Kolab:/3.4:/Updates/Debian_7.0/ ./" >> /etc/apt/sources.list.d/kolab.list
 
-RUN gpg --export --armor devel@lists.kolab.org | apt-key add -
+ADD ./kolab.key /tmp/kolab.key
+
+RUN  apt-key add /tmp/kolab.key
 
 RUN echo "Package: *" > /etc/apt/preferences.d/kolab \
  && echo "Pin: origin obs.kolabsys.com" >> /etc/apt/preferences.d/kolab \
